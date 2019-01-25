@@ -169,8 +169,10 @@ def optimize_routes(state, nice_data, dist_matrix, route_inds=None,
 
 def populate_state(state, nice_data, dist_matrix, random_seed=None,
                    *args, **kwargs):
-    # return populate_state_random(state, nice_data, dist_matrix,
-    #                      random_seed=random_seed, *args, **kwargs)
+    """Populate the initial state.
+
+    Wrapper function for e.g. populate_state_clusters or
+    populate_state_random"""
     return populate_state_clusters(state, nice_data, dist_matrix,
                                    random_seed=random_seed, *args, **kwargs)
 
@@ -416,8 +418,8 @@ def combine_routes(state, nice_data, cluster_centers,
 def populate_state_random(state, nice_data, dist_matrix, random_seed=None):
     """Populate a previously empty state
 
-    Ensures that the weight constraint is fulfilled, all gifts are distributed,
-    and each subroute is optimized"""
+    Distributes gifts randomly to routes. Ensures that the weight constraint
+    is fulfilled, all gifts are distributed, and each subroute is optimized"""
 
     # Get weights in descending order; gifts are distributed at random
     # starting with the heaviest ones
@@ -556,7 +558,7 @@ class TravellingSantaProblem(Annealer):
 
 if __name__ == '__main__':
 
-    loglevel = logging.DEBUG
+    loglevel = logging.INFO
 
     logging.basicConfig(format='%(asctime)s %(levelname)s:%(message)s',
                         level=loglevel,

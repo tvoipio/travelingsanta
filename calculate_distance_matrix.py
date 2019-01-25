@@ -18,6 +18,7 @@ def calc_dist_helper(data):
     return gp.dist_mat(nice_data, output=None, gca_fun=gp.calc_gca,
                        rowinds=range(minrow, maxrow+1))
 
+
 if __name__ == '__main__':
 
     out_file = 'dist_mat.pkl'
@@ -33,7 +34,7 @@ if __name__ == '__main__':
     nice_raw = pp.read_input()
 
     # For debugging purposes.
-    #nice_raw = nice_raw.head(432)
+    # nice_raw = nice_raw.head(432)
 
     logging.info('Calculating sines and cosines')
     nice_data = gp.calc_trigs(nice_raw, lat_col='lat_deg', lon_col='lon_deg')
@@ -46,7 +47,7 @@ if __name__ == '__main__':
         pickle.dump(nice_data, f)
 
     logging.info('Calculating distance matrix')
-    #dist_mat = gp.dist_mat(nice_data, output=out_interval, gca_fun=gp.calc_gca)
+    # dist_mat = gp.dist_mat(nice_data, output=out_interval, gca_fun=gp.calc_gca)
 
     with Pool() as pool:
         breaks = list(range(0, nice_data.shape[0]+1, 50))
