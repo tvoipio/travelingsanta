@@ -18,6 +18,8 @@ The initial state is found using spatial clustering (k-means on the Cartesian
     reasonably close together and thus the Cartesian distance is a reasonable
     approximation of the actual (great circle) distance.
 
+Simulated annealing is applied using https://github.com/perrygeo/simanneal
+
 *How to execute:*
 1. Ensure that you have the requirements installed:
   - Python 3.x (I used 3.6.6)
@@ -27,6 +29,7 @@ The initial state is found using spatial clustering (k-means on the Cartesian
 
 The Jupyter notebook `Visualise Nice Children.ipynb` was used for playing
 around with the different components.
+
 
 Original task:
 
