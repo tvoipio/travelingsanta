@@ -1,10 +1,10 @@
 import pandas as pd
-import numpy as np
 
 input_filename = 'nicelist.txt'
 
 # Korvatunturi coordinates 68.073611N 29.315278E
 EF_COORDS = (68.073611, 29.315278)
+
 
 def read_input(fname=input_filename):
     input_raw = pd.read_csv(fname, sep=';',

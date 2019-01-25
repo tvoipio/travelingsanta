@@ -1,6 +1,7 @@
 from simanneal import Annealer
 import random
 
+
 class SingleSantaProblem(Annealer):
     """Solve the traveling salesman problem with simulated annealing
 
@@ -8,7 +9,8 @@ class SingleSantaProblem(Annealer):
     matrix. Santa's workshop (index 0) is automatically added as the first and
     and last stop."""
 
-    def __init__(self, state, distance_matrix, random_seed=None, noupdate=False):
+    def __init__(self, state, distance_matrix,
+                 random_seed=None, noupdate=False):
         self.distance_matrix = distance_matrix
         self.noupdate = noupdate
         random.seed(random_seed)
